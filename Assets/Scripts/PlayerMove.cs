@@ -10,8 +10,8 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce;
     public Transform groundCheck;
     public float groundCheckDistance;
-    public sway swayScript;
-
+    public WeaponSway swayScript;
+    public float swayMagnitude = 1f;
 
     // Update is called once per frame
     void Update()
@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        swayScript.counterMultiplier = 1 + Mathf.Max(x,z) * 10;
+        swayScript.counterMultiplier = 1 + Mathf.Max(x,z) * swayMagnitude;
 
         player.position += move * speed * Time.deltaTime;
     }
