@@ -5,9 +5,11 @@ using UnityEngine;
 public class WeaponSway : MonoBehaviour
 {
     public float swayCounter = 0f;
-    public float swayMagnitude = .1f;
+    public float swayMagnitude = .01f;
     public float counterMultiplier = 1f;
     public float amountMultiplier = 1f;
+    public float counterMultiplierInitial = 15f;
+    public float swayMagnitudeInitial = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
