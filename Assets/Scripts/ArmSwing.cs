@@ -31,19 +31,15 @@ public class ArmSwing : MonoBehaviour
         {
             float rotationAmount = rotationSpeed * Time.deltaTime;
             //trans.Rotate(rotationChange * rotationSpeed * Time.deltaTime);
-            transform.Rotate(Vector3.up, rotationAmount);
-            if (Mathf.Abs(transform.rotation.eulerAngles.y) >= 170f)
+            trans.Rotate(Vector3.up, rotationAmount);
+            if (trans.localEulerAngles.y > 100f && trans.localEulerAngles.y < 150f)
             {
-                transform.rotation = Quaternion.Euler(startYRotation);
+                trans.localEulerAngles = new Vector3(-16,-50,0);
                 swinging = false;
             }
+            
         }
 
-        //if (trans.rotation.y < 0f)
-        //{
-        //    trans.rotation = Quaternion.Euler(startYRotation);
-        //    swinging = false;
-        //}
 
     }
 }
