@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
 
         bool jumping = Input.GetButtonDown("Jump");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = (transform.right * x + transform.forward * z).normalized;
 
         if (jumping && grounded)
         {
@@ -31,8 +31,8 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        swayScript.counterMultiplier = swayScript.counterMultiplierInitial + Mathf.Max(x,z) * swayMagnitude;
-        swayScript.swayMagnitude = swayScript.swayMagnitudeInitial + Mathf.Max(x, z) * swayMagnitudeChange;
+        swayScript.counterMultiplier = swayScript.counterMultiplierInitial + Mathf.Abs(x) + Mathf.Abs(z) * swayMagnitude;
+        swayScript.swayMagnitude = swayScript.swayMagnitudeInitial + swayMagnitudeChange;
 
         player.position += move * speed * Time.deltaTime;
     }

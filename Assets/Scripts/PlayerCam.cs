@@ -18,6 +18,7 @@ public class PlayerCam : MonoBehaviour
     public string grappleTag;
 
     public Transform hitPoint;
+    public Transform defaultHitPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,15 @@ public class PlayerCam : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            hitPoint.position = new Vector3(hit.point.x, hit.point.y,hit.point.z);
+            if (hit.collider != null)
+            {
+                hitPoint.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+            }
+            if (!hit.collider)
+            {
+                hitPoint = defaultHitPoint;
+                Debug.Log("No Target");
+            }
 
             gunRotateScript.target = hitPoint;
 
@@ -59,6 +68,8 @@ public class PlayerCam : MonoBehaviour
             {
                 Debug.Log("Hit Grapple");
             }
+
+            hitPoint = defaultHitPoint;
         }
     }
 }
