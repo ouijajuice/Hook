@@ -62,7 +62,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 2
+    value: 0
   toneCurveToeStrength:
     overrideState: 1
     value: 0
@@ -1383,13 +1383,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 3.92
+    value: 1.74
   threshold:
     overrideState: 1
-    value: 1
+    value: 0.54
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0
   clamp:
     overrideState: 1
     value: 65472
@@ -1401,7 +1401,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.745283, g: 0.3702978, b: 0.3702978, a: 1}
   fastMode:
     overrideState: 1
     value: 1
@@ -1439,7 +1439,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.604
+    value: 0.482
   smoothness:
     overrideState: 1
     value: 0.321

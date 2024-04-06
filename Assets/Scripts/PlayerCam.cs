@@ -62,11 +62,11 @@ public class PlayerCam : MonoBehaviour
 
             if (hit.collider.gameObject.CompareTag(enemyTag))
             {
-                Debug.Log("Hit Enemy");
+                //Debug.Log("Hit Enemy");
             }
             else if (hit.collider.gameObject.CompareTag(grappleTag))
             {
-                Debug.Log("Hit Grapple");
+                //Debug.Log("Hit Grapple");
             }
 
             hitPoint = defaultHitPoint;
