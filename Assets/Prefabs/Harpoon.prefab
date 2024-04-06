@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  fleshHarpoon: {fileID: 6672082961396990946, guid: 4af0feaaf3531f64ca560ef31b8d9c2e, type: 3}
+  fleshExplosion: {fileID: 6187054774491730936, guid: b7005bb9b8af667409d34082063e31f8, type: 3}
 --- !u!65 &2432681143162268852
 BoxCollider:
   m_ObjectHideFlags: 0

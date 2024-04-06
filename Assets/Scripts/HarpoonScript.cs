@@ -7,6 +7,8 @@ public class HarpoonScript : MonoBehaviour
 
     public float speed;
     private Rigidbody rb;
+    public GameObject fleshHarpoon;
+    public GameObject fleshExplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +27,19 @@ public class HarpoonScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit Enemy");
+            Instantiate(fleshHarpoon, transform.position, transform.rotation);
+            Instantiate(fleshExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            //Debug.Log("Hit Enemy");
         }
         else if (collision.gameObject.CompareTag("Grappleable"))
         {
-            Debug.Log("Hit Grapple");
+            //Debug.Log("Hit Grapple");
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
         rb.constraints = RigidbodyConstraints.FreezeAll;
     }
-
 }
