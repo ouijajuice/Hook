@@ -9,11 +9,15 @@ public class HarpoonScript : MonoBehaviour
     private Rigidbody rb;
     public GameObject fleshHarpoon;
     public GameObject fleshExplosion;
+    public Transform lineEndPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameObject lineObject = GameObject.FindWithTag("MainCamera");
+        LineRendererScript lineScript = lineObject.GetComponent<LineRendererScript>();
+        lineScript.pos2 = lineEndPoint;
         rb.AddForce(transform.up * speed, ForceMode.Impulse);
     }
 
