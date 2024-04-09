@@ -29,6 +29,7 @@ public class HarpoonScript : MonoBehaviour
         {
             Instantiate(fleshHarpoon, transform.position, transform.rotation);
             Instantiate(fleshExplosion, transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
             Destroy(gameObject);
             //Debug.Log("Hit Enemy");
         }
