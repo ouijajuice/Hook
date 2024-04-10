@@ -8,9 +8,13 @@ public class FleshHarpoonScript : MonoBehaviour
     private GameObject firePoint;
     private Transform target;
     private bool inAir = true;
+    public Transform lineEndPoint;
     private void Start()
     {
         firePoint = GameObject.FindWithTag("Gun");
+        GameObject lineObject = GameObject.FindWithTag("MainCamera");
+        LineRendererScript lineScript = lineObject.GetComponent<LineRendererScript>();
+        lineScript.pos2 = lineEndPoint;
     }
 
     // Update is called once per frame

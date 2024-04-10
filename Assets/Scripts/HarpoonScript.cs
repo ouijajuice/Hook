@@ -10,7 +10,7 @@ public class HarpoonScript : MonoBehaviour
     public GameObject fleshHarpoon;
     public GameObject fleshExplosion;
     public Transform lineEndPoint;
-
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public class HarpoonScript : MonoBehaviour
         {
             Instantiate(fleshHarpoon, transform.position, transform.rotation);
             Instantiate(fleshExplosion, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject);            
             Destroy(gameObject);
             //Debug.Log("Hit Enemy");
         }
