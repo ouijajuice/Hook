@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         if (Physics.CheckSphere(transform.position, detectionRadius, playerLayer))
         {
             detectedPlayer = true;
-            Debug.Log("Detected player");
+            //Debug.Log("Detected player");
         }
         else
         {

@@ -9,10 +9,13 @@ public class FleshHarpoonScript : MonoBehaviour
     private Transform target;
     private bool inAir = true;
     public Transform lineEndPoint;
+    private GameObject gunHolder;
     private void Start()
     {
         firePoint = GameObject.FindWithTag("Gun");
         GameObject lineObject = GameObject.FindWithTag("MainCamera");
+        gunHolder = GameObject.FindWithTag("GunHolder");
+        
         LineRendererScript lineScript = lineObject.GetComponent<LineRendererScript>();
         lineScript.pos2 = lineEndPoint;
     }
@@ -30,6 +33,9 @@ public class FleshHarpoonScript : MonoBehaviour
             if (transform.position == target.position)
             {
                 transform.SetParent(target.gameObject.transform);
+                PlayerShooting gunScript = gunHolder.GetComponent<PlayerShooting>();
+                gunScript.fleshLoaded = true;
+                gunScript.currentFleshHarpoon = this.gameObject;
             }
         }
         
