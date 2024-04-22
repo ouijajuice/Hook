@@ -32,6 +32,8 @@ public class EnemyMovement : MonoBehaviour
         if (Physics.CheckSphere(transform.position, detectionRadius, playerLayer))
         {
             detectedPlayer = true;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            target = player.transform;
             //Debug.Log("Detected player");
         }
         else

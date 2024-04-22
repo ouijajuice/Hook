@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+
     public Rigidbody player;
     public float speed;
     public float jumpForce;
@@ -13,6 +14,8 @@ public class PlayerMove : MonoBehaviour
     public WeaponSway swayScript;
     public float swayMagnitude = 1f;
     public float swayMagnitudeChange = 1f;
+    public int maxHealth = 5;
+
     // Update is called once per frame
     void Update()
     {
