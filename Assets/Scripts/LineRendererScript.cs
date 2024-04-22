@@ -17,6 +17,10 @@ public class LineRendererScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pos2 == null)
+        {
+            pos2 = pos1;
+        }
         line.SetPosition(0, pos1.position);
         line.SetPosition(1, pos2.position);
     }

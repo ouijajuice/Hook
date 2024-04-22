@@ -22,7 +22,12 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    
+    //}
+
+    private void FixedUpdate()
     {
         if (Physics.CheckSphere(transform.position, detectionRadius, playerLayer))
         {
@@ -40,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (transform.position == agent.destination)
         {
-            animator.SetBool("walking", false) ;
+            animator.SetBool("walking", false);
         }
     }
 }
