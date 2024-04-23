@@ -8,6 +8,7 @@ TagManager:
   - Grappleable
   - Gun
   - GunHolder
+  - HarpoonPickup
   layers:
   - Default
   - TransparentFX

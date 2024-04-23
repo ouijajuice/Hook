@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerShooting : MonoBehaviour
     public AudioSource source;
 
     public GameObject harpoonHolder;
+
+    public LineRendererScript lineRenderer;
 
     public bool loaded = true;
     public bool fleshLoaded = false;
@@ -44,7 +47,13 @@ public class PlayerShooting : MonoBehaviour
         }
         if (currentFleshHarpoon == null)
         {
-            
+            if(Input.GetMouseButtonDown(1))
+            {
+                lineRenderer.pos2 = null;
+                noHarpoon = true;
+            }
         }
     }
+
+    
 }

@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     public float swayMagnitude = 1f;
     public float swayMagnitudeChange = 1f;
     public int maxHealth = 5;
+    public PlayerShooting playerShooting;
 
     // Update is called once per frame
     void Update()
@@ -38,5 +39,22 @@ public class PlayerMove : MonoBehaviour
         swayScript.swayMagnitude = swayScript.swayMagnitudeInitial + swayMagnitudeChange;
 
         player.position += move * speed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("COLLIDING");
+        if (collision.collider.CompareTag("HarpoonPickup"))
+        {
+            Debug.Log("Colliding");
+            if (playerShooting.noHarpoon)
+            {
+                Debug.Log("In noHapoon statement");
+                playerShooting.loaded = true;
+                playerShooting.noHarpoon = false;
+
+            }
+            collision.collider.gameObject.SetActive(false);
+        }
     }
 }
