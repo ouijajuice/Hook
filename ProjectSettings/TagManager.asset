@@ -9,6 +9,8 @@ TagManager:
   - Gun
   - GunHolder
   - HarpoonPickup
+  - Key
+  - KeyDoor
   layers:
   - Default
   - TransparentFX
